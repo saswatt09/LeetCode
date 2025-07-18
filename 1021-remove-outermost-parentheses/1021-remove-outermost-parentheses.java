@@ -1,24 +1,22 @@
 class Solution {
     public String removeOuterParentheses(String s) {
-        StringBuilder result = new StringBuilder();
-        int count = 0; 
+        StringBuilder sb = new StringBuilder();
 
-        for (char c : s.toCharArray()) {
-            if (c == '(') {
-                // If count > 0, it's not an outer parenthesis
-                if (count > 0) {
-                    result.append(c);
+        int count = 0;
+
+        for (char c : s.toCharArray()){
+            if(c = '('){
+                if (count> 0){
+                    sb.append(c);
                 }
                 count++;
-            } else {
+            }else{
                 count--;
-                // If count > 0 after decrement, it's not an outer parenthesis
-                if (count > 0) {
-                    result.append(c);
+                if(count>0){
+                    sb.append(c);
                 }
             }
         }
-        
-        return result.toString();
+        return sb.toString();
     }
 }
